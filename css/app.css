@@ -1,0 +1,131 @@
+html {
+  font-size: 100px; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.14rem; }
+  .wrap .header {
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    background: #1A1B1F; }
+    .wrap .header h1 {
+      font-size: 0.18rem; }
+    .wrap .header .left {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      line-height: 44px; }
+    .wrap .header .right {
+      position: absolute;
+      right: 10px;
+      top: 0;
+      line-height: 44px; }
+  .wrap .content {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow-y: auto;
+    background: #eee; }
+    .wrap .content .item {
+      width: 100%;
+      overflow: hidden;
+      background: #fff; }
+      .wrap .content .item .list {
+        width: 130%; }
+        .wrap .content .item .list li {
+          width: 100%;
+          display: -webkit-flex;
+          display: flex; }
+          .wrap .content .item .list li dl {
+            width: 100%;
+            padding: 10px;
+            display: -webkit-flex;
+            display: flex; }
+            .wrap .content .item .list li dl dt {
+              width: 93px;
+              height: 115px;
+              margin-right: 10px; }
+              .wrap .content .item .list li dl dt img {
+                width: 100%;
+                height: 100%; }
+            .wrap .content .item .list li dl dd {
+              -webkit-flex: 1;
+              flex: 1; }
+              .wrap .content .item .list li dl dd p {
+                display: -webkit-flex;
+                display: flex;
+                -webkit-justify-content: space-between; }
+                .wrap .content .item .list li dl dd p:nth-child(3) {
+                  margin: 10px 0 30px 0; }
+                  .wrap .content .item .list li dl dd p:nth-child(3) span {
+                    color: #afaeb1; }
+                  .wrap .content .item .list li dl dd p:nth-child(3) input {
+                    -webkit-appearance: none;
+                    outline: none;
+                    border: none;
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid #ccc;
+                    line-height: 20px;
+                    text-align: center;
+                    background: #eee; }
+                .wrap .content .item .list li dl dd p:nth-child(4) span {
+                  color: #7100ff; }
+                .wrap .content .item .list li dl dd p button {
+                  outline: none;
+                  border: none;
+                  width: 20px;
+                  height: 20px;
+                  line-height: 20px;
+                  text-align: center;
+                  border: none;
+                  background: none;
+                  font-size: 0.25rem;
+                  color: #ccc; }
+                  .wrap .content .item .list li dl dd p button.del {
+                    font-size: 0.3rem; }
+          .wrap .content .item .list li .close {
+            width: 30%;
+            height: auto;
+            color: #fff;
+            font-size: 0.3rem;
+            background: #de3838;
+            text-align: center;
+            padding-top: 50px; }
+    .wrap .content .zprice {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-between;
+      padding: 20px 10px 30px 10px; }
+      .wrap .content .zprice p span:last-child {
+        margin-left: 10px;
+        color: #000;
+        font-weight: bold; }
+  .wrap .footer {
+    width: 100%;
+    padding: 10px 10px;
+    background: #eee; }
+    .wrap .footer span {
+      display: block;
+      font-weight: bold;
+      width: 100%;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      background: #1A1B1F;
+      color: #fff;
+      border-radius: 5px; }
+
+/*# sourceMappingURL=app.css.map */

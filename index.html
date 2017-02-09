@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type='text/css' href="css/reset.css">
+	<link rel="stylesheet" type='text/css' href="css/font-awesome.min.css">
+	<link rel="stylesheet" type='text/css' href="css/swiper.min.css">
+	<link rel="stylesheet" type='text/css' href="css/app.css">
+
+</head>
+<body>
+	<div class="wrap">
+		<header class="header">
+			<i class='fa fa-list left'></i>
+			<h1>Shop</h1>
+			<i class='fa fa-shopping-cart right'></i>
+		</header>
+		<section class="content">
+			<div class="item">
+				<ul class="list">
+					<li>
+						<dl>
+							<dt><img src="img/image1.png" alt=""></dt>
+							<dd>
+								<p>
+									<b>Elegant Apron-Coco</b>
+									<button class='add'>+</button>
+								</p>
+								<p>
+									<b>Collection</b>
+								</p>
+								<p>
+									<span>JACKET/BLACK</span>
+									<input type="text" value='1' class='txt'>
+								</p>
+								<p>
+									<span class='price'>$647.00</span>
+									<button class='del'>-</button>
+								</p>
+							</dd>
+						</dl>
+						<div class="close">&times;</div>
+					</li>
+					
+			    </ul>
+			</div>
+			<div class="item">
+				<ul class="list">
+					<li>
+						<dl>
+							<dt><img src="img/image2.png" alt=""></dt>
+							<dd>
+								<p>
+									<b>Elegant Apron-Coco</b>
+									<button class='add'>+</button>
+								</p>
+								<p>
+									<b>Collection</b>
+								</p>
+								<p>
+									<span>JACKET/BLACK</span>
+									<input type="text" value='1' class='txt'>
+								</p>
+								<p>
+									<span class='price'>$227.50</span>
+									<button class='del'>-</button>
+								</p>
+							</dd>
+						</dl>
+						<div class="close">&times;</div>
+					</li>
+			    </ul>
+			</div>
+			<div class="item">
+				<ul class="list">
+					<li>
+						<dl>
+							<dt><img src="img/image1.png" alt=""></dt>
+							<dd>
+								<p>
+									<b>Elegant Apron-Coco</b>
+									<button class='add'>+</button>
+								</p>
+								<p>
+									<b>Collection</b>
+								</p>
+								<p>
+									<span>JACKET/BLACK</span>
+									<input type="text" value='1' class='txt'>
+								</p>
+								<p>
+									<span class='price'>$220.00</span>
+									<button class='del'>-</button>
+								</p>
+							</dd>
+						</dl>
+						<div class="close">&times;</div>
+					</li>
+					
+			    </ul>
+			</div>
+			<div class="zprice">
+				<h3>TOTAL</h3>
+				<p>
+					<span id='jian'>3ITEMS</span>
+					<span class='zprices'>$845.00</span>
+				</p>
+			</div>
+		</section>
+		<footer class="footer">
+			<span>
+				PLACE ORDER
+			</span>
+		</footer>
+	</div>
+</body>
+</html>
+<script src="zepto.min.js"></script>
+<script>
+ $(".item").each(function(i,val){
+
+  	  var add=$(val).find(".add");
+  	  var del=$(val).find(".del");
+  	  var txt=$(val).find(".txt");
+  	  function init(){
+  	  	var n=$(".item").length;
+		$("#jian").text(n+"ITEMS");
+		var zon=0;
+		$(".item").each(function(){
+			var price=$(this).find(".price").text().slice(1);
+			var num=$(this).find(".txt").val();
+			zon+=price*num;
+		})
+		$(".zprices").text("$"+zon+".00");
+  	  }
+  	  init();
+  	  add.on("click",function(){
+           var num=txt.val()*1;
+           num++;
+		   
+		   if(num>8) return; 
+		   txt.val(num);
+		   init();
+      });
+      del.on("click",function(){
+          var num=txt.val()*1;
+		  num--;
+          if(num<=1){
+             num=1;
+          }
+      	  txt.val(num);
+      	  init();
+      });
+      $(this).on("swipeLeft",function(e){
+ 		$(this).find(".list").css({
+ 			"-webkit-transition":"all 0.5s ease-in",
+ 			"-webkit-transform":"translateX(-20%)"
+ 		});
+ 		$(".close").on("click",function(){
+ 			$(this).parents(".item").remove();
+ 			init();
+ 		})
+ 	 });
+      $(this).on("swipeRight",function(e){
+ 		$(this).find(".list").css({
+ 			"-webkit-transition":"all 0.5s ease-in",
+ 			"-webkit-transform":"translateX(0)"
+ 		})
+ 	 })
+  })
+
+</script>
+
